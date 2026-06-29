@@ -52,7 +52,7 @@ classDiagram
 
 ## Cómo ejecutar
 
-### Windows 
+### Windows
 
 Desde la carpeta raíz del repositorio:
 
@@ -69,6 +69,17 @@ cd .\biblioteca-tdd\
 
 > En Windows, el comando debe ejecutarse dentro de la carpeta `biblioteca-tdd`.
 
+## Evidencia de ejecución
+
+La suite de pruebas se ejecutó correctamente con Maven Wrapper en Windows y terminó con resultado exitoso.
+
+```text
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0
+BUILD SUCCESS
+```
+
+Esta salida confirma que el proyecto compila y que la suite JUnit 5 pasa completa.
+
 ## Tecnologías
 
 - Java 21
@@ -79,27 +90,55 @@ cd .\biblioteca-tdd\
 
 ## TDD
 
-El proyecto está pensado para seguir el ciclo TDD:
+El proyecto sigue el enfoque TDD:
 
 1. Red: escribir una prueba que falle.
 2. Green: implementar lo mínimo para que pase.
 3. Refactor: mejorar el diseño sin romper el comportamiento.
 
-En este caso, el dominio de biblioteca está separado en modelo, servicio y excepciones para facilitar pruebas unitarias claras sobre cada regla de negocio.
+En este caso, el dominio de biblioteca está separado en modelo, servicio y excepciones para facilitar pruebas unitarias claras sobre cada regla de negocio. La suite fue diseñada para validar primero el comportamiento observable del servicio y luego comprobar el estado del modelo tras cada operación.
+
+## Casos de prueba
+
+La suite incluye 22 pruebas unitarias:
+
+1. `registrarLibroValidoDebeGuardarlo`
+2. `registrarLibroValidoDebeQuedarDisponible`
+3. `registrarLibroNullDebeLanzarIllegalArgumentException`
+4. `registrarLibroConIsbnNullDebeLanzarIllegalArgumentException`
+5. `registrarLibroConIsbnVacioDebeLanzarIllegalArgumentException`
+6. `registrarLibroConTituloNullDebeLanzarIllegalArgumentException`
+7. `registrarLibroConTituloVacioDebeLanzarIllegalArgumentException`
+8. `registrarLibroDuplicadoDebeLanzarLibroDuplicadoException`
+9. `buscarPorIsbnExistenteDebeRetornarLibro`
+10. `buscarPorIsbnInexistenteDebeRetornarOptionalVacio`
+11. `buscarPorTituloConCoincidenciaParcialDebeRetornarLibros`
+12. `buscarPorTituloDebeIgnorarMayusculasYMinusculas`
+13. `buscarPorTituloInexistenteDebeRetornarListaVacia`
+14. `listarDisponiblesDebeRetornarSoloLibrosDisponibles`
+15. `prestarLibroDisponibleDebeMarcarloComoNoDisponible`
+16. `prestarLibroInexistenteDebeLanzarLibroNoEncontradoException`
+17. `prestarLibroYaPrestadoDebeLanzarLibroNoDisponibleException`
+18. `prestarLibroConIsbnNullDebeLanzarLibroNoEncontradoException`
+19. `prestarLibroConIsbnVacioDebeLanzarLibroNoEncontradoException`
+20. `devolverLibroPrestadoDebeMarcarloComoDisponible`
+21. `devolverLibroInexistenteDebeLanzarLibroNoEncontradoException`
+22. `devolverLibroYaDisponibleDebeLanzarLibroYaDisponibleException`
+
+Se midió cobertura funcional de reglas de negocio, ya que el objetivo principal de la tarea es verificar mediante JUnit que cada operación del sistema cumpla su comportamiento esperado y sus casos de error.
 
 ## Cobertura
 
-La cobertura de pruebas debe centrarse en los comportamientos del dominio:
+La cobertura funcional actual se concentra en el comportamiento del servicio de biblioteca:
 
-- registro de libros
+- registro correcto e incorrecto de libros
 - búsqueda por ISBN
-- búsqueda parcial por título
-- listado de disponibles
-- préstamo de libros
-- devolución de libros
-- validación de errores y excepciones
+- búsqueda parcial e insensible a mayúsculas/minúsculas por título
+- listado de libros disponibles
+- préstamo y devolución de libros
+- excepciones de dominio asociadas a cada flujo
 
-Actualmente el proyecto incluye un test base mínimo en [AppTest.java](src/test/java/cl/usm/biblioteca/AppTest.java), por lo que la cobertura funcional real todavía es baja. La estructura ya está lista para ampliar la suite de pruebas con casos de negocio.
+La suite automatizada verifica el estado del sistema después de cada operación y valida que las reglas de negocio se cumplan sin usar base de datos ni mocks.
 
 ## Estructura del proyecto
 
@@ -129,7 +168,8 @@ biblioteca-tdd/
 │   └── test/
 │       └── java/
 │           └── cl/usm/biblioteca/
-│               └── AppTest.java
+│               └── service/
+│                   └── BibliotecaTest.java
 └── target/
 ```
 

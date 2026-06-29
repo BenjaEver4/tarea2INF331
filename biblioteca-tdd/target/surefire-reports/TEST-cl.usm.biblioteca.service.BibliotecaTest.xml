@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="cl.usm.biblioteca.service.BibliotecaTest" time="0.069" tests="22" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="cl.usm.biblioteca.service.BibliotecaTest" time="0.067" tests="22" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CL"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Microsoft\jdk-21.0.11.10-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\bpaul\AppData\Local\Temp\surefire13063724554536687287\surefirebooter17954654658763795011.jar C:\Users\bpaul\AppData\Local\Temp\surefire13063724554536687287 2026-06-29T19-45-49_337-jvmRun1 surefire12948754063622357768tmp surefire_02502961448866562051tmp"/>
+    <property name="sun.java.command" value="C:\Users\bpaul\AppData\Local\Temp\surefire10757700179071309679\surefirebooter15533111545009091844.jar C:\Users\bpaul\AppData\Local\Temp\surefire10757700179071309679 2026-06-29T19-49-36_033-jvmRun1 surefire8947710439148023834tmp surefire_03819669613074972506tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\bpaul\Desktop\tarea2TESTING\tarea2INF331\biblioteca-tdd\target\test-classes;C:\Users\bpaul\Desktop\tarea2TESTING\tarea2INF331\biblioteca-tdd\target\classes;C:\Users\bpaul\.m2\repository\org\junit\jupiter\junit-jupiter\5.11.0\junit-jupiter-5.11.0.jar;C:\Users\bpaul\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.0\junit-jupiter-api-5.11.0.jar;C:\Users\bpaul\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\bpaul\.m2\repository\org\junit\platform\junit-platform-commons\1.11.0\junit-platform-commons-1.11.0.jar;C:\Users\bpaul\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\bpaul\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.0\junit-jupiter-params-5.11.0.jar;C:\Users\bpaul\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.11.0\junit-jupiter-engine-5.11.0.jar;C:\Users\bpaul\.m2\repository\org\junit\platform\junit-platform-engine\1.11.0\junit-platform-engine-1.11.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\bpaul\AppData\Local\Temp\surefire13063724554536687287\surefirebooter17954654658763795011.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\bpaul\AppData\Local\Temp\surefire10757700179071309679\surefirebooter15533111545009091844.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.11+10-LTS"/>
@@ -59,26 +59,26 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="prestarLibroConIsbnVacioDebeLanzarLibroNoEncontradoException" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0.039"/>
-  <testcase name="buscarPorIsbnInexistenteDebeRetornarOptionalVacio" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0.001"/>
-  <testcase name="prestarLibroYaPrestadoDebeLanzarLibroNoDisponibleException" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0.001"/>
+  <testcase name="prestarLibroConIsbnVacioDebeLanzarLibroNoEncontradoException" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0.027"/>
+  <testcase name="buscarPorIsbnInexistenteDebeRetornarOptionalVacio" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0"/>
+  <testcase name="prestarLibroYaPrestadoDebeLanzarLibroNoDisponibleException" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0.002"/>
   <testcase name="prestarLibroDisponibleDebeMarcarloComoNoDisponible" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0"/>
   <testcase name="registrarLibroDuplicadoDebeLanzarLibroDuplicadoException" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0.001"/>
   <testcase name="registrarLibroConTituloVacioDebeLanzarIllegalArgumentException" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0.001"/>
   <testcase name="devolverLibroYaDisponibleDebeLanzarLibroYaDisponibleException" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0"/>
-  <testcase name="buscarPorTituloDebeIgnorarMayusculasYMinusculas" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0.002"/>
-  <testcase name="registrarLibroNullDebeLanzarIllegalArgumentException" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0.001"/>
-  <testcase name="registrarLibroConIsbnNullDebeLanzarIllegalArgumentException" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0.001"/>
+  <testcase name="buscarPorTituloDebeIgnorarMayusculasYMinusculas" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0.001"/>
+  <testcase name="registrarLibroNullDebeLanzarIllegalArgumentException" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0.002"/>
+  <testcase name="registrarLibroConIsbnNullDebeLanzarIllegalArgumentException" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0"/>
   <testcase name="prestarLibroConIsbnNullDebeLanzarLibroNoEncontradoException" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0"/>
-  <testcase name="buscarPorTituloInexistenteDebeRetornarListaVacia" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0"/>
+  <testcase name="buscarPorTituloInexistenteDebeRetornarListaVacia" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0.001"/>
   <testcase name="registrarLibroConTituloNullDebeLanzarIllegalArgumentException" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0.001"/>
-  <testcase name="devolverLibroInexistenteDebeLanzarLibroNoEncontradoException" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0.001"/>
+  <testcase name="devolverLibroInexistenteDebeLanzarLibroNoEncontradoException" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0"/>
   <testcase name="prestarLibroInexistenteDebeLanzarLibroNoEncontradoException" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0"/>
-  <testcase name="buscarPorIsbnExistenteDebeRetornarLibro" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0.001"/>
-  <testcase name="registrarLibroConIsbnVacioDebeLanzarIllegalArgumentException" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0"/>
-  <testcase name="listarDisponiblesDebeRetornarSoloLibrosDisponibles" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0"/>
+  <testcase name="buscarPorIsbnExistenteDebeRetornarLibro" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0"/>
+  <testcase name="registrarLibroConIsbnVacioDebeLanzarIllegalArgumentException" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0.001"/>
+  <testcase name="listarDisponiblesDebeRetornarSoloLibrosDisponibles" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0.001"/>
   <testcase name="devolverLibroPrestadoDebeMarcarloComoDisponible" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0"/>
-  <testcase name="registrarLibroValidoDebeGuardarlo" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0"/>
-  <testcase name="buscarPorTituloConCoincidenciaParcialDebeRetornarLibros" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0.001"/>
-  <testcase name="registrarLibroValidoDebeQuedarDisponible" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0"/>
+  <testcase name="registrarLibroValidoDebeGuardarlo" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0.001"/>
+  <testcase name="buscarPorTituloConCoincidenciaParcialDebeRetornarLibros" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0"/>
+  <testcase name="registrarLibroValidoDebeQuedarDisponible" classname="cl.usm.biblioteca.service.BibliotecaTest" time="0.001"/>
 </testsuite>
