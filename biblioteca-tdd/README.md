@@ -180,3 +180,30 @@ biblioteca-tdd/
 - Las excepciones personalizadas representan errores de dominio específicos.
 - `Optional` se usa para búsquedas seguras por ISBN.
 - `Map` se usa para acceso rápido por clave única.
+
+
+## Reflexión sobre el uso de TDD
+
+### Pregunta 1: ¿Cómo apliqué el ciclo Red → Green → Refactor?
+
+Para aplicar TDD, primero definí los comportamientos esperados del sistema mediante pruebas unitarias. Por ejemplo, antes de validar completamente el registro de libros, se planteó el caso `registrarLibroDuplicadoDebeLanzarLibroDuplicadoException`.
+
+En la etapa Red, la prueba representa un escenario que inicialmente no está cubierto. Luego, en Green, se implementa la lógica mínima en `Biblioteca` para detectar un ISBN repetido y lanzar la excepción correspondiente. Finalmente, en Refactor, se ordena la validación dentro del método privado `validarLibroParaRegistro`, manteniendo todas las pruebas exitosas.
+
+Este mismo criterio se aplicó a las funcionalidades de búsqueda, préstamo y devolución.
+
+### Pregunta 2: Ventajas y desventajas observadas al usar TDD
+
+Una ventaja importante de TDD fue que permitió transformar cada regla del enunciado en un caso verificable. Por ejemplo, las reglas de no prestar un libro inexistente o no devolver un libro ya disponible quedaron respaldadas por pruebas específicas.
+
+También ayudó a detectar errores temprano y a dar más confianza al modificar el código, ya que después de cada cambio se podía ejecutar la suite completa y comprobar que el comportamiento seguía correcto.
+
+Como desventaja, TDD puede hacer que el desarrollo inicial sea más lento, porque antes de implementar la funcionalidad hay que pensar bien qué se espera probar. Además, al comienzo puede ser difícil decidir qué casos son realmente unitarios y cuáles son casos de integración.
+
+### Pregunta 3: ¿Volvería a usar TDD?
+
+Sí, volvería a usar TDD, especialmente en sistemas con reglas de negocio claras como este. El uso de pruebas permitió mejorar la calidad del software, porque cada funcionalidad importante quedó validada automáticamente.
+
+Respecto al diseño, TDD ayudó a separar mejor las responsabilidades: `Libro` quedó como modelo de datos y estado, mientras que `Biblioteca` concentra la lógica de registro, búsqueda, préstamo y devolución.
+
+También permitió detectar errores de forma temprana, por ejemplo en validaciones de ISBN, título, duplicados y disponibilidad. Aunque al principio puede tomar más tiempo escribir las pruebas, después entrega mayor confianza para refactorizar o agregar nuevas funcionalidades sin romper lo ya implementado.
