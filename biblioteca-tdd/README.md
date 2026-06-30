@@ -140,6 +140,37 @@ La cobertura funcional actual se concentra en el comportamiento del servicio de 
 
 La suite automatizada verifica el estado del sistema después de cada operación y valida que las reglas de negocio se cumplan sin usar base de datos ni mocks.
 
+
+Durante la ejecución se validaron los siguientes casos:
+
+| Nº | Caso de prueba | Resultado |
+|----|----------------|-----------|
+| 1 | Registrar libro válido | ✅ Exitoso |
+| 2 | Verificar disponibilidad inicial | ✅ Exitoso |
+| 3 | Registrar libro nulo | ✅ Exitoso |
+| 4 | Registrar libro con ISBN nulo | ✅ Exitoso |
+| 5 | Registrar libro con ISBN vacío | ✅ Exitoso |
+| 6 | Registrar libro con título nulo | ✅ Exitoso |
+| 7 | Registrar libro con título vacío | ✅ Exitoso |
+| 8 | Registrar libro duplicado | ✅ Exitoso |
+| 9 | Buscar libro por ISBN existente | ✅ Exitoso |
+| 10 | Buscar libro por ISBN inexistente | ✅ Exitoso |
+| 11 | Buscar por coincidencia parcial de título | ✅ Exitoso |
+| 12 | Buscar ignorando mayúsculas y minúsculas | ✅ Exitoso |
+| 13 | Buscar título inexistente | ✅ Exitoso |
+| 14 | Listar únicamente libros disponibles | ✅ Exitoso |
+| 15 | Prestar libro disponible | ✅ Exitoso |
+| 16 | Prestar libro inexistente | ✅ Exitoso |
+| 17 | Prestar libro ya prestado | ✅ Exitoso |
+| 18 | Prestar libro con ISBN nulo | ✅ Exitoso |
+| 19 | Prestar libro con ISBN vacío | ✅ Exitoso |
+| 20 | Devolver libro prestado | ✅ Exitoso |
+| 21 | Devolver libro inexistente | ✅ Exitoso |
+| 22 | Devolver libro ya disponible | ✅ Exitoso |
+
+La ejecución finalizó correctamente:
+
+
 ## Estructura del proyecto
 
 ```text
